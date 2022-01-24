@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Age Calculator</h3>
+    <form action="">
+      <input id="date" type="number" placeholder="Enter your date" />
+      <select name="" id="month">
+        <option selected disabled value="">month</option>
+        <option value="January">jan</option>
+        <option value="Febuary">feb</option>
+        <option value="March">mar</option>
+        <option value="April">apr</option>
+        <option value="May">may</option>
+        <option value="June">jun</option>
+        <option value="July">jul</option>
+        <option value="August">aug</option>
+        <option value="September">sep</option>
+        <option value="October">oct</option>
+        <option value="November">nov</option>
+        <option value="December">Dec</option>
+      </select>
+      <input id="year" type="number" placeholder="Enter the year" />
+    </form>
+  <br />
+    <button onclick="Calculate()">Calculate</button> <br>
+    <h3 id="result"></h3>
+    <script>
+      const Calculate = () => {
+        let date = document.getElementById("date").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+         let date1 = new Date(`${date} ${month} ${year}`);
+         console.log(date1);
+         let date2 = new Date();
+         console.log(date2);
+         let currentdate = date2-date1;
+         console.log(currentdate);
+         let day = Math.floor(currentdate/(1000*60*60*24));
+         console.log(day);
+         let monthh = Math.floor(currentdate/(1000*60*60*24*30.4375));
+         console.log(monthh);
+         let yearr = Math.floor(currentdate/(1000*60*60*24*365));
+         console.log(yearr);
+         result.innerHTML = `  ${day}Days, ${monthh}Months,  ${yearr}Year`;
+          }
+        
+         
+    </script>
+  </body>
+</html>
